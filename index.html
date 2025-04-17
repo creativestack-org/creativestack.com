@@ -1,1 +1,1111 @@
-<!DOCTYPE html><h1>Creative Stack, LLC.</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Stack - Web & iOS App Development | creativestack.com</title>
+    <meta
+      name="description"
+      content="Creative Stack specializes in building exceptional web and iOS applications that elevate your business and delight your users."
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="web development, iOS app development, UI/UX design, creative stack"
+    />
+    <link rel="canonical" href="https://creativestack.com" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://creativestack.com" />
+    <meta property="og:title" content="Creative Stack - Web & iOS App Development" />
+    <meta
+      property="og:description"
+      content="We build exceptional web and iOS applications that elevate your business and delight your users."
+    />
+    <meta property="og:image" content="https://creativestack.com/images/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://creativestack.com" />
+    <meta property="twitter:title" content="Creative Stack - Web & iOS App Development" />
+    <meta
+      property="twitter:description"
+      content="We build exceptional web and iOS applications that elevate your business and delight your users."
+    />
+    <meta property="twitter:image" content="https://creativestack.com/images/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <style>
+      /* Catppuccin Latte Theme Colors */
+      :root {
+        --base: #eff1f5;
+        --text: #4c4f69;
+        --subtext: #6c6f85;
+        --rosewater: #dc8a78;
+        --flamingo: #dd7878;
+        --pink: #ea76cb;
+        --mauve: #8839ef;
+        --red: #d20f39;
+        --maroon: #e64553;
+        --peach: #fe640b;
+        --yellow: #df8e1d;
+        --green: #40a02b;
+        --teal: #179299;
+        --sky: #04a5e5;
+        --sapphire: #209fb5;
+        --blue: #1e66f5;
+        --lavender: #7287fd;
+        --surface: #ffffff;
+        --border: #dce0e8;
+      }
+
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: var(--text);
+        background-color: var(--surface);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover,
+      a:focus {
+        color: var(--mauve);
+        text-decoration: underline;
+      }
+
+      a:focus {
+        outline: 2px solid var(--mauve);
+        outline-offset: 2px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--mauve);
+        color: white;
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s ease;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Layout */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Header */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+        background-color: var(--surface);
+      }
+
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      nav a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0.5rem;
+      }
+
+      nav a:hover,
+      nav a:focus {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .cta-button {
+        display: none;
+        background-color: var(--mauve);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover,
+      .cta-button:focus {
+        background-color: var(--lavender);
+        color: white;
+        text-decoration: none;
+      }
+
+      .menu-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-button:focus {
+        outline: 2px solid var(--mauve);
+        outline-offset: 2px;
+      }
+
+      /* Main Content */
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Hero Section */
+      .hero {
+        width: 100%;
+        padding: 4rem 0;
+        background: linear-gradient(135deg, #f5f5ff 0%, #fff0f5 100%);
+        display: flex;
+        align-items: center;
+        min-height: calc(100vh - 4rem - 5rem); /* Subtract header and footer height */
+      }
+
+      .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: var(--text);
+        letter-spacing: -0.025em;
+      }
+
+      .hero-description {
+        color: var(--subtext);
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin: 0 auto;
+        max-width: 400px;
+      }
+
+      .primary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--mauve);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .primary-button:hover,
+      .primary-button:focus {
+        background-color: var(--lavender);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(136, 57, 239, 0.15);
+      }
+
+      .secondary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        color: var(--text);
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .secondary-button:hover,
+      .secondary-button:focus {
+        border-color: var(--mauve);
+        color: var(--mauve);
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 5rem 0;
+        background-color: var(--surface);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+
+      .section-description {
+        color: var(--subtext);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .service-card {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      }
+
+      .service-icon {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+      }
+
+      .web-icon {
+        background-color: rgba(136, 57, 239, 0.1);
+        color: var(--mauve);
+      }
+
+      .ios-icon {
+        background-color: rgba(234, 118, 203, 0.1);
+        color: var(--pink);
+      }
+
+      .design-icon {
+        background-color: rgba(223, 142, 29, 0.1);
+        color: var(--yellow);
+      }
+
+      .service-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .service-description {
+        color: var(--subtext);
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #f5f5ff 0%, #fff0f5 100%);
+      }
+
+      .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .form-input,
+      .form-textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 0.375rem;
+        background-color: var(--surface);
+        color: var(--text);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: var(--mauve);
+        box-shadow: 0 0 0 3px rgba(136, 57, 239, 0.1);
+      }
+
+      .form-textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .form-submit {
+        width: 100%;
+      }
+
+      .contact-info {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        text-align: center;
+      }
+
+      .contact-info p {
+        margin-bottom: 0.5rem;
+        color: var(--subtext);
+      }
+
+      .contact-email {
+        font-weight: 500;
+        color: var(--mauve);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 1.5rem 0;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .copyright {
+        color: var(--subtext);
+        font-size: 0.875rem;
+      }
+
+      /* Confirmation Modal */
+      .confirmation-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .confirmation-modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .confirmation-content {
+        background-color: var(--surface);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        max-width: 90%;
+        width: 400px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+
+      .confirmation-modal.active .confirmation-content {
+        transform: translateY(0);
+      }
+
+      .confirmation-icon {
+        width: 4rem;
+        height: 4rem;
+        background-color: rgba(64, 160, 43, 0.1);
+        color: var(--green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .confirmation-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+      }
+
+      .confirmation-message {
+        color: var(--subtext);
+        margin-bottom: 1.5rem;
+      }
+
+      .confirmation-spinner {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 3px solid rgba(136, 57, 239, 0.2);
+        border-radius: 50%;
+        border-top-color: var(--mauve);
+        animation: spin 1s linear infinite;
+        margin-right: 0.5rem;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Toast Notification */
+      .toast {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background-color: var(--surface);
+        color: var(--text);
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        z-index: 100;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .toast.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .toast-icon {
+        color: var(--green);
+        flex-shrink: 0;
+      }
+
+      .toast-message {
+        font-weight: 500;
+      }
+
+      /* Responsive Styles */
+      @media (min-width: 640px) {
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .hero-buttons {
+          flex-direction: row;
+        }
+
+        .primary-button,
+        .secondary-button {
+          width: auto;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .footer-container {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        nav {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .cta-button {
+          display: flex;
+        }
+
+        .menu-button {
+          display: none;
+        }
+
+        .hero-title {
+          font-size: 3.5rem;
+        }
+
+        .hero-description {
+          font-size: 1.25rem;
+        }
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        background-color: var(--surface);
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 40;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .mobile-menu a {
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="/" class="logo" aria-label="Creative Stack Home"> Creative Stack </a>
+
+        <a href="#contact" class="cta-button">Get in Touch</a>
+
+        <button
+          class="menu-button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <h1 class="hero-title">Transforming Ideas into Digital Reality</h1>
+            <p class="hero-description">
+              We build exceptional web and iOS applications that elevate your business and delight
+              your users.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="primary-button">
+                Start Your Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-left: 0.5rem"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#services" class="secondary-button">Our Services</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-description">
+              We offer comprehensive solutions for your digital needs
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon web-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="service-title">Web Development</h3>
+              <p class="service-description">
+                Custom websites and web applications built with the latest technologies for optimal
+                performance.
+              </p>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon ios-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="service-title">iOS App Development</h3>
+              <p class="service-description">
+                Native iOS applications designed for seamless user experience and performance.
+              </p>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon design-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="service-title">UI/UX Design</h3>
+              <p class="service-description">
+                Intuitive and engaging user interfaces that enhance user experience and drive
+                engagement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-description">Ready to start your project? Contact us today!</p>
+          </div>
+
+          <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New Web Inquiry from Creative Stack" />
+              <input type="hidden" name="_next" value="#toast" />
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  placeholder="Enter your message"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="primary-button form-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <p class="copyright">
+          © <span id="current-year">2025</span> Creative Stack, LLC. All rights reserved.
+        </p>
+        <a href="https://creativestack.com" class="footer-link">creativestack.com</a>
+      </div>
+    </footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="confirmation-modal">
+      <div class="confirmation-content">
+        <div class="confirmation-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h2 class="confirmation-title">Message Sent!</h2>
+        <p class="confirmation-message">Thank you for reaching out.</p>
+        <div>
+          <span class="confirmation-spinner"></span>
+          <span>We'll respond soon.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+      <div class="toast-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+      </div>
+      <span class="toast-message">Message sent successfully!</span>
+    </div>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Creative Stack",
+        "url": "https://creativestack.com",
+        "description": "Creative Stack specializes in building exceptional web and iOS applications that elevate your business and delight your users."
+      }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+      // Update current year in footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Mobile menu toggle
+      const menuButton = document.querySelector('.menu-button');
+      let mobileMenuCreated = false;
+      let mobileMenu = null;
+
+      function toggleMobileMenu() {
+        if (!mobileMenuCreated) {
+          // Create mobile menu
+          mobileMenu = document.createElement('div');
+          mobileMenu.id = 'mobile-menu';
+          mobileMenu.className = 'mobile-menu';
+
+          // Add menu items
+          const menuItems = [
+            { href: '#services', text: 'Services' },
+            { href: '#contact', text: 'Contact' },
+          ];
+
+          menuItems.forEach(item => {
+            const link = document.createElement('a');
+            link.href = item.href;
+            link.textContent = item.text;
+            link.addEventListener('click', () => {
+              mobileMenu.style.display = 'none';
+              menuButton.setAttribute('aria-expanded', 'false');
+            });
+            mobileMenu.appendChild(link);
+          });
+
+          // Add CTA button
+          const ctaLink = document.createElement('a');
+          ctaLink.href = '#contact';
+          ctaLink.textContent = 'Get in Touch';
+          ctaLink.className = 'primary-button';
+          ctaLink.style.marginTop = '0.5rem';
+          ctaLink.addEventListener('click', () => {
+            mobileMenu.style.display = 'none';
+            menuButton.setAttribute('aria-expanded', 'false');
+          });
+          mobileMenu.appendChild(ctaLink);
+
+          document.body.appendChild(mobileMenu);
+          mobileMenuCreated = true;
+        }
+
+        // Toggle menu visibility
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !expanded);
+        mobileMenu.style.display = expanded ? 'none' : 'flex';
+      }
+
+      menuButton.addEventListener('click', toggleMobileMenu);
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+
+            // Update URL without page jump
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+
+      // Form submission with visual confirmation
+      const contactForm = document.getElementById('contact-form');
+      const confirmationModal = document.getElementById('confirmation-modal');
+      const toast = document.getElementById('toast');
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Basic validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+          alert('Please fill in all fields');
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          alert('Please enter a valid email address');
+          return;
+        }
+
+        // Show confirmation modal
+        confirmationModal.classList.add('active');
+
+        // Set a timeout to actually submit the form
+        setTimeout(() => {
+          // Hide modal
+          confirmationModal.classList.remove('active');
+
+          // Show toast notification
+          toast.classList.add('active');
+
+          // Send form data via fetch to FormSubmit AJAX endpoint
+          fetch("https://formsubmit.co/ajax/web-inquiry@creativestack.com", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: JSON.stringify({ name, email, message })
+          })
+            .then(response => {
+              if (response.ok) {
+                toast.classList.add("active");
+                setTimeout(() => {
+                  toast.classList.remove("active");
+                }, 3000);
+              } else {
+                alert("There was a problem sending your message.");
+              }
+            })
+            .catch(() => {
+              alert("Network error. Please try again.");
+            });
+        }, 2000);
+      });
+
+      // Email validation helper
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      // Add focus outline for keyboard navigation
+      function handleFirstTab(e) {
+        if (e.key === 'Tab') {
+          document.body.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    </script>
+  </body>
+</html>
